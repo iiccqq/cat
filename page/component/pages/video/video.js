@@ -15,8 +15,12 @@ Page({
   onLoad: function (option) {
     this.setData({ imageId: option.imageId, type: option.type });
   },
+  data: {
+    showQR: false
+  },
   inputValue: '',
     data: {
+     
     src: '',
     danmuList:
       [{
@@ -50,7 +54,8 @@ Page({
     this.videoContext.sendDanmu({
       text: this.inputValue,
       color: getRandomColor()
-    })
+    });
+    this.setData({ showQZ: !this.data.showQZ});
   },
   videoErrorCallback: function(e) {
     console.log('视频错误信息:')

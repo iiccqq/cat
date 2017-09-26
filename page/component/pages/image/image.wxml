@@ -21,6 +21,9 @@
   <view class="btn-area">
           <button bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">我要购买</button>
         </view>
+        <view wx:if="{{showQZ}}" >
+     <image src="https://iiccqq.github.io/wechat/qz.png"/>
+    </view>
 
   <template is="foot"/>
 </view>
