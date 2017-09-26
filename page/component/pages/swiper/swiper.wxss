@@ -1,0 +1,22 @@
+@import "../../../common/lib/weui.wxss";
+
+
+
+.section{
+  margin-top: 10px;
+  width:100%;
+  height: 120px
+}
+
+.section_icon{
+  width: 190px;
+}
+.section_icon image{
+  float:left;width: 120px; height: 120px; background-color: #eeeeee;
+}
+.section_text{
+  width: 220px;height: 120px;float:left;margin-left:20px;
+}
+.section_title{
+  height:40px;font-weight: bold;
+}

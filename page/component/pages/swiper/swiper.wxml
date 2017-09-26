@@ -1,0 +1,45 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+
+  <view class="page">
+  <view>
+  
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+  <navigator url="/page/component/pages/image/image?imageId={{item.itemId}}&&type=banner" hover-class="navigator-hover">
+    <swiper-item>
+      <image src="{{item.url}}" mode="scaleToFill" style="width: 375px; height: 150px; background-color: #eeeeee;" />
+    </swiper-item>
+    </navigator>
+  </block>
+</swiper>
+
+</view>
+
+  <view class="page_bd">
+    <view class="section"  scroll-x  wx:for="{{items}}" wx:for-item="item" >  
+      <navigator url="{{item.url}}" hover-class="navigator-hover">
+      <view class="section_icon" >
+        <image mode="{{item.mode}}" src="{{item.src}}" ></image>
+      </view>
+       <view class="section_text"  >
+        <view class="section_title">{{item.title}}</view>        
+        <view class="section_body">{{item.text}}</view>
+        </view>
+        </navigator>  
+    </view>
+
+
+
+  </view>
+   
+
+
+
+</view>
+
+  <template is="foot" />
+</view>
