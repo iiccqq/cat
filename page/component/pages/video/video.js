@@ -7,7 +7,8 @@ function getRandomColor () {
   }
   return '#' + rgb.join('')
 }
-
+var t = new Date();
+var time = '' + t.getYear() + t.getMonth() + t.getDate() + t.getHours() + t.getMinutes() / 10;
 Page({
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')
@@ -15,8 +16,14 @@ Page({
   onLoad: function (option) {
     this.setData({ imageId: option.imageId, type: option.type });
   },
+  onShow: function () {
+    var t = new Date();
+    var time = '' + t.getYear() + t.getMonth() + t.getDate() + t.getHours();
+    this.setData({ tt: time });
+  },  
   data: {
-    showQR: false
+    showQR: false,
+    tt:time
   },
   inputValue: '',
     data: {

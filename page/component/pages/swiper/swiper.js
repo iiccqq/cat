@@ -1,3 +1,6 @@
+
+var t = new Date();
+var time = '' + t.getYear() + t.getMonth() + t.getDate() + t.getHours() + t.getMinutes() / 10;
 Page({
   data: {
     imgUrls: [{itemId:1,url:'https://iiccqq.github.io/wechat/banner1.jpg'},
@@ -8,6 +11,7 @@ Page({
     autoplay: false,
     interval: 5000,
     duration: 1000,
+    tt: time,
     items:[
       {
         id:1,
@@ -46,6 +50,11 @@ Page({
   onLoad: function (options) {
     
     
+  },
+  onShow: function () {
+    var t = new Date();
+    var time = '' + t.getYear() + t.getMonth() + t.getDate() + t.getHours();
+    this.setData({ tt: time});
   },
   changeIndicatorDots: function (e) {
     this.setData({

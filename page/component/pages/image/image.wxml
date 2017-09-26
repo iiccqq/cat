@@ -8,13 +8,13 @@
     <view class="page-section page-section-gap">
       <view class="page-section-title">小猫新家</view>
       <view class="page-section-ctn">
-        <image class="image" mode="widthFix" src="https://iiccqq.github.io/wechat/{{type}}{{imageId}}1.jpg"/>
+        <image class="image" mode="widthFix" src="https://iiccqq.github.io/wechat/{{type}}{{imageId}}1.jpg?tt={{tt}}"/>
       </view>
     </view>
     <view class="page-section page-section-gap">
       <view class="page-section-title">真可爱</view>
       <view class="page-section-ctn">
-        <image class="image" mode="widthFix"  src="https://iiccqq.github.io/wechat/{{type}}{{imageId}}2.jpg"/>
+        <image class="image" mode="widthFix"  src="https://iiccqq.github.io/wechat/{{type}}{{imageId}}2.jpg?tt={{tt}}"/>
       </view>
     </view>
   </view>
@@ -22,7 +22,7 @@
           <button bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">我要购买</button>
         </view>
         <view wx:if="{{showQZ}}" >
-     <image src="https://iiccqq.github.io/wechat/qz.png"/>
+     <image src="https://iiccqq.github.io/wechat/qz.png?tt={{tt}}"/>
     </view>
 
   <template is="foot"/>
