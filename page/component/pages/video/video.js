@@ -1,6 +1,6 @@
-function getRandomColor () {
+function getRandomColor() {
   const rgb = []
-  for (let i = 0 ; i < 3; ++i){
+  for (let i = 0; i < 3; ++i) {
     let color = Math.floor(Math.random() * 256).toString(16)
     color = color.length == 1 ? '0' + color : color
     rgb.push(color)
@@ -14,47 +14,66 @@ Page({
     this.videoContext = wx.createVideoContext('myVideo')
   },
   onLoad: function (option) {
-    this.setData({ imageId: option.imageId, type: option.type });
+    wx.request({
+      url: 'https://iiccqq.github.io/wechat/detail/' + option.imageId + '.json',
+      data: {
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: this.showContent
+    });
+    
+  },
+  showContent: function (res) {
+   
+    var videoUrl;
+    if (res.data.length>0) {
+      videoUrl = res.data[0].url;
+    }
+    this.setData({ imageId: this.data.imageId, url: videoUrl});
   },
   onShow: function () {
     var t = new Date();
     var time = '' + t.getYear() + t.getMonth() + t.getDate() + t.getHours();
-    this.setData({ tt: time });
-  },  
+    this.setData({
+      tt: time});
+    
+  },
   data: {
     showQR: false,
-    tt:time
+    tt: time
   },
   inputValue: '',
-    data: {
-     
+  data: {
+
     src: '',
     danmuList:
-      [{
-        text: '第 1s 出现的弹幕',
-        color: '#ff0000',
-        time: 1
-      },
-      {
-        text: '第 3s 出现的弹幕',
-        color: '#ff00ff',
-        time: 3
-      }]
+    [{
+      text: '第 1s 出现的弹幕',
+      color: '#ff0000',
+      time: 1
     },
-  bindInputBlur: function(e) {
+    {
+      text: '第 3s 出现的弹幕',
+      color: '#ff00ff',
+      time: 3
+    }]
+  },
+  bindInputBlur: function (e) {
     this.inputValue = e.detail.value
   },
-  bindButtonTap: function() {
+  bindButtonTap: function () {
     var that = this
     wx.chooseVideo({
-        sourceType: ['album', 'camera'],
-        maxDuration: 60,
-        camera: ['front','back'],
-        success: function(res) {
-            that.setData({
-                src: res.tempFilePath
-            })
-        }
+      sourceType: ['album', 'camera'],
+      maxDuration: 60,
+      camera: ['front', 'back'],
+      success: function (res) {
+        that.setData({
+          src: res.tempFilePath
+        })
+      }
     })
   },
   bindSendDanmu: function () {
@@ -62,9 +81,9 @@ Page({
       text: this.inputValue,
       color: getRandomColor()
     });
-    this.setData({ showQZ: !this.data.showQZ});
+    this.setData({ showQZ: !this.data.showQZ });
   },
-  videoErrorCallback: function(e) {
+  videoErrorCallback: function (e) {
     console.log('视频错误信息:')
     console.log(e.detail.errMsg)
   }

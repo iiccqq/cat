@@ -8,8 +8,8 @@
   
   <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}">
-  <navigator url="/page/component/pages/image/image?imageId={{item.itemId}}&&type=banner" hover-class="navigator-hover">
+  <block wx:for="{{bannerItems}}">
+  <navigator url="/page/component/pages/image/image?imageId={{item.itemId}}" hover-class="navigator-hover">
     <swiper-item>
       <image src="{{item.url}}?tt={{tt}}" mode="scaleToFill" style="width: 375px; height: 150px; background-color: #eeeeee;" />
     </swiper-item>

@@ -6,7 +6,7 @@
 
   <view class="page-body">
     <view class="page-section tc">
-      <video id="myVideo" src="https://iiccqq.github.io/wechat/{{type}}{{imageId}}1.mp4?tt={{tt}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+      <video id="myVideo" src="{{url}}?tt={{tt}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
       
       <view class="btn-area">
         <button bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">我要购买</button>
