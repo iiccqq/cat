@@ -14,7 +14,7 @@
    
   </view>
   <view class="btn-area">
-          <button bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">我要购买</button>
+          <button bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">联系我</button>
         </view>
         <view wx:if="{{showQZ}}" >
      <image src="https://iiccqq.github.io/wechat/qz.png?tt={{tt}}"/>
