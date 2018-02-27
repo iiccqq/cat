@@ -7,21 +7,25 @@ Page({
     imageId:1,
     showQR: false,
     tt:time,
-    items: [{ title: '', url: '' }, { title: '', url: '' }]
+    items: [{ title: '小猫', url: '/image/content11.jpg' }, { title: '', url: '' }]
   },
   onLoad: function (option) {
     this.setData({ imageId: option.imageId, type: option.type });
   },
   onShow: function () {
-    wx.request({
-      url: 'https://iiccqq.github.io/wechat/detail/' + this.data.imageId +'.json',
+
+
+   /* wx.request({
+      url: '/image/detail/' + this.data.imageId +'.json',
       data: {
       },
       header: {
         'content-type': 'application/json'
       },
       success: this.showContent
-    }); 
+    }); */
+
+   
   },
   showContent: function (res) {
     const length = this.data.items.length;

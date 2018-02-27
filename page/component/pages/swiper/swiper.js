@@ -3,9 +3,9 @@ var t = new Date();
 var time = '' + t.getYear() + t.getMonth() + t.getDate() + t.getHours() + t.getMinutes() / 10;
 Page({
   data: {
-    bannerItems: [{ "itemId": 11, "url": "https://iiccqq.github.io/wechat/banner1.jpg" },
-      { "itemId": 12, "url": "https://iiccqq.github.io/wechat/banner2.jpg" },
-      { "itemId": 13, "url": "https://iiccqq.github.io/wechat/banner3.jpg" }
+    bannerItems: [{ "itemId": 1, "url": "/image/banner1.jpg" },
+      { "itemId": 1, "url": "/image/banner2.jpg" }
+    
     ],
     indicatorDots: true,
     autoplay: false,
@@ -15,36 +15,21 @@ Page({
     items:[
       {
         id:1,
-        src:'https://iiccqq.github.io/wechat/icon1.png',
-        url:'',
+        src:'/image/icon2.jpg',
+        url:'/page/component/pages/image/image?imageId=1&&type=content',
         mode: 'aspectFill',
-        title:'',
-        text: ''
+        title:'小猫',
+        text: '小猫内容'
       },
       {
-        id:2,
-        src: 'https://iiccqq.github.io/wechat/icon1.png',
-        url: '',
+        id:1,
+        src: '/image/icon2.jpg',
+        url: '/page/component/pages/image/image?imageId=1&&type=content',
         mode: 'aspectFill',
-        title: '',
-        text: ''
-      },
-      {
-        id:3,
-        src: 'https://iiccqq.github.io/wechat/icon1.png',
-        url: '',
-        mode: 'aspectFill',
-        title: '',
-        text: ''
-      },
-      {
-        id:4,
-        src: 'https://iiccqq.github.io/wechat/icon1.png',
-        url: '',
-        mode: 'aspectFill',
-        title: '',
-        text: ''
+        title: '小猫2',
+        text: '小猫内容2'
       }
+     
     ]
   },
   onLoad: function (options) {
@@ -55,8 +40,8 @@ Page({
     var t = new Date();
     var time = '' + t.getYear() + t.getMonth() + t.getDate() + t.getHours();
     this.setData({ tt: time });
-    wx.request({
-      url: 'https://iiccqq.github.io/wechat/banner.json',
+   /* wx.request({
+      url: '/image/banner.json',
       data: {
       },
       header: {
@@ -65,7 +50,7 @@ Page({
       success: this.showBanner
     });
     wx.request({
-      url: 'https://iiccqq.github.io/wechat/list.json',
+      url: '/image/list.json',
       data: {
       },
       header: {
@@ -73,7 +58,7 @@ Page({
       },
       success: this.showList
     })
-    
+    */
   },
   showBanner : function(res) {
     const length = this.data.bannerItems.length;
